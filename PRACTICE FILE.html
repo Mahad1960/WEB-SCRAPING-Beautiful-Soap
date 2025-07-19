@@ -1,0 +1,59 @@
+<!DOCTYPE html><html><head><title>Mahad's Messy Page<title>
+<meta charset="UTF-8"></head><body><h1 style="color: red;">Welcome
+
+<div id="intro"><p>This paragraph is inside a div
+<div id="profile"><h2>About Me<h2>
+I am a <b>student</b> who loves Python and scraping!
+<!-- Missing closing tag for div -->
+
+<ul><li>Web scraping<li>Data Mining
+<li>APIs</ul>
+
+<!-- Some random content -->
+<p>Here is an <a href=https://example.com>example link<a> and some
+<span style="font-weight: bold" id="boldtext">bold text<span> with no closing.
+
+<div class="contact"><h3>Contact:</h3>
+Email: <a href="mailto:mahad@example.com">mahad@example.com</a><br>
+Phone: +123456789
+<form action=/submit method=post><input type=text name=name placeholder="Name"
+<input type=email name=email><input type=submit value="Send"></form>
+<!-- form not closed properly -->
+
+<h3>Skills Table</h3>
+<table border=1><tr><td>Python<td>✔<tr><td>BeautifulSoup<td>✔<tr><td>Clean Code<td>✖</table>
+
+<footer>© Mahad's Page 2025.    Visit   <a href=https://github.com/mahad>GitHub</a>
+</footer>
+
+<script>
+console.log("Random JS here");
+</script>
+🧪 Example Parsing with BeautifulSoup:
+python
+Copy
+Edit
+from bs4 import BeautifulSoup
+
+with open("messy_sample.html", "r", encoding="utf-8") as f:
+    html = f.read()
+
+soup = BeautifulSoup(html, "html.parser")
+
+# Extract title
+print("Title:", soup.title.text.strip())
+
+# All h2 tags (even if not closed properly)
+for h2 in soup.find_all("h2"):
+    print("H2 Heading:", h2.text.strip())
+
+# All list items
+print("List Items:")
+for li in soup.find_all("li"):
+    print("-", li.text.strip())
+
+# All links
+print("Links:")
+for a in soup.find_all("a"):
+    href = a.get("href")
+    print(f"Text: {a.text.strip()} | Link: {href}")
