@@ -1,4 +1,4 @@
-# Web Scraping FLIPKART Data with BeautifulSoup:
+# Web Scraping FLIPKART Using BeautifulSoup:
 
 This project is a basic web scraping tool built using **Python** and **BeautifulSoup**. It extracts **laptop titles**, **prices**, and **links** from saved Flipkart HTML pages. This project was created while learning from **CodeWithHarry's web scraping tutorials**.
 
